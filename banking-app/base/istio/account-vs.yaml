@@ -1,0 +1,13 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: account-vs
+spec:
+  hosts:
+  - account.banking-app.svc
+  http:
+  - name: "account-v1-route"
+    route:
+    - destination:
+        host: account.banking-app.svc
+        subset: v1
