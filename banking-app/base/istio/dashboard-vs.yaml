@@ -1,0 +1,14 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: dashboard-vs
+spec:
+  hosts:
+  - dashboard.banking-app.svc
+  http:
+  - name: "dashboard-v1-route"
+    route:
+    - destination:
+        host: dashboard.banking-app.svc
+        subset: v1
+

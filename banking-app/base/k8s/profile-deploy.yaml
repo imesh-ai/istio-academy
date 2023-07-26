@@ -1,29 +1,30 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: account
-  namespace: banking-app
+  name: profile
   labels:
-    app: account
+    app: profile
+    version: v1
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: account
+      app: profile
   template:
     metadata:
       labels:
-        app: account
+        app: profile
+        version: v1
     spec:
       containers:
-      - name: account
-        image: imeshai/demo-bank-account:latest
+      - name: profile
+        image: imeshai/demo-bank-profile:latest
         resources:
           requests:
             cpu: "100m"
         imagePullPolicy: Always
         ports:
-        - containerPort: 8080
+        - containerPort: 8081
         env:
         - name: POD_NAME
           valueFrom:
