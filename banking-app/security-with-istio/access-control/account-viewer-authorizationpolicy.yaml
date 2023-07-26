@@ -1,0 +1,17 @@
+apiVersion: security.istio.io/v1
+kind: AuthorizationPolicy
+metadata:
+  name: account-viewer
+  namespace: banking-app
+spec:
+  selector:
+    matchLabels:
+      app: account
+  action: ALLOW
+  rules:
+  - from:
+    - source:
+        principals: ["cluster.local/ns/banking-app/sa/dashboard"]
+    to:
+    - operation:
+        methods: ["GET"]

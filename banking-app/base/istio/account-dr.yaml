@@ -1,7 +1,8 @@
 apiVersion: networking.istio.io/v1beta1
 kind: DestinationRule
 metadata:
-  name: account-dr
+  name: account
+  namespace: banking-app
 spec:
   host: account.banking-app.svc
   subsets:

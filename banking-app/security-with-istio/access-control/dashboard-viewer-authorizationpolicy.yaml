@@ -1,0 +1,14 @@
+apiVersion: security.istio.io/v1
+kind: AuthorizationPolicy
+metadata:
+  name: dashboard-viewer
+  namespace: banking-app
+spec:
+  selector:
+    matchLabels:
+      app: dashboard
+  action: ALLOW
+  rules:
+  - to:
+    - operation:
+        methods: ["GET"]

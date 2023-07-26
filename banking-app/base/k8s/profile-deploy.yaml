@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: profile
+  namespace: banking-app
   labels:
     app: profile
     version: v1
