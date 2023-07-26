@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: dashboard
+  namespace: banking-app
   labels:
     app: dashboard
     version: v1
@@ -16,6 +17,7 @@ spec:
         app: dashboard
         version: v1
     spec:
+      serviceAccountName: dashboard
       containers:
       - name: dashboard
         image: imeshai/demo-bank-dashboard:latest

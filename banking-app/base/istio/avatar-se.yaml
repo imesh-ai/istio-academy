@@ -1,7 +1,8 @@
 apiVersion: networking.istio.io/v1beta1
 kind: ServiceEntry
 metadata:
-  name: avatar-se
+  name: avatar
+  namespace: banking-app
 spec:
   hosts:
   - api.dicebear.com

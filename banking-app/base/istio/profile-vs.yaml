@@ -1,7 +1,8 @@
 apiVersion: networking.istio.io/v1beta1
 kind: VirtualService
 metadata:
-  name: profile-vs
+  name: profile
+  namespace: banking-app
 spec:
   hosts:
   - profile.banking-app.svc
