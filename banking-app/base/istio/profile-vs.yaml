@@ -5,10 +5,9 @@ metadata:
   namespace: banking-app
 spec:
   hosts:
-  - profile.banking-app.svc
+  - profile.banking-app.svc.cluster.local
   http:
   - name: "profile-v1-route"
     route:
     - destination:
-        host: profile.banking-app.svc
-        subset: v1
+        host: profile.banking-app.svc.cluster.local

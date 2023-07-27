@@ -1,0 +1,18 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: account
+  namespace: banking-app
+spec:
+  hosts:
+    - account.banking-app.svc.cluster.local
+  http:
+    - name: "account-v1-route"
+      route:
+        - destination:
+            host: account.banking-app.svc.cluster.local
+      timeout: 15s
+      retries:
+        attempts: 3
+        perTryTimeout: 5s
+        retryOn: gateway-error,connect-failure,refused-stream
