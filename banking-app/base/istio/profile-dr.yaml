@@ -4,7 +4,7 @@ metadata:
   name: profile
   namespace: banking-app
 spec:
-  host: profile.banking-app.svc
+  host: profile.banking-app.svc.cluster.local
   subsets:
   - name: v1
     labels:

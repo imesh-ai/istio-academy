@@ -5,10 +5,9 @@ metadata:
   namespace: banking-app
 spec:
   hosts:
-  - account.banking-app.svc
+  - account.banking-app.svc.cluster.local
   http:
   - name: "account-v1-route"
     route:
     - destination:
-        host: account.banking-app.svc
-        subset: v1
+        host: account.banking-app.svc.cluster.local
